@@ -42,6 +42,7 @@ namespace Bench_Test
             list_size.Items.Add("4-L");
             list_size.Items.Add("5-N");
             list_size.Items.Add("5-L");
+            list_size.Items.Add("check");
 
             // Change date inside the input date
             DateTime datetime = DateTime.Now;
