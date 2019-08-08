@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.m_test_bench = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
-            this.Tests = new System.Windows.Forms.Button();
+            this.Tests = new System.Windows.Forms.Button();      
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -71,12 +72,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -411,6 +419,7 @@
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 40;
             this.label1.Text = "port name";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // comboBox2
             // 
@@ -433,14 +442,17 @@
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 42;
             this.label2.Text = "Baud rate";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.DropDownWidth = 121;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(720, 224);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 21);
-            this.comboBox1.TabIndex = 43;
+            this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // progressBar1
@@ -459,6 +471,7 @@
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 45;
             this.label3.Text = "Status";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // button1
             // 
@@ -481,14 +494,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Receive here";
             // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(6, 26);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(153, 64);
-            this.textBox15.TabIndex = 0;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(72, 120);
@@ -499,11 +504,63 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(6, 26);
+            this.textBox15.Multiline = true;
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(153, 64);
+            this.textBox15.TabIndex = 0;
+            this.textBox15.TextChanged += new System.EventHandler(this.TextBox15_TextChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.textBox16);
+            this.groupBox2.Location = new System.Drawing.Point(833, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(165, 160);
+            this.groupBox2.TabIndex = 48;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Send here";
+            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(63, 117);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(87, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Send";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(6, 26);
+            this.textBox16.Multiline = true;
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(153, 64);
+            this.textBox16.TabIndex = 0;
+            this.textBox16.TextChanged += new System.EventHandler(this.TextBox16_TextChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(888, 363);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(123, 58);
+            this.button4.TabIndex = 49;
+            this.button4.Text = "Close port";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 640);
+            this.ClientSize = new System.Drawing.Size(1023, 640);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -554,12 +611,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+        
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
@@ -574,6 +634,7 @@
         private System.Windows.Forms.ComboBox list_size;
         private System.Windows.Forms.TextBox input_color;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.TextBox serrage1;
         private System.Windows.Forms.TextBox serrage2;
         private System.Windows.Forms.TextBox serrage3;
@@ -604,7 +665,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox15;
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Button button4;
+        //private System.IO.Ports.SerialPort serialPort1;
+
     }
 }
 
