@@ -20,3 +20,14 @@ C:\Users\wbenjemaa\Desktop\Bench Test\Bench Test\obj\Debug\Bench Test.csproj.Gen
 C:\Users\wbenjemaa\Desktop\Bench Test\Bench Test\obj\Debug\Bench Test.csproj.CoreCompileInputs.cache
 C:\Users\wbenjemaa\Desktop\Bench Test\Bench Test\obj\Debug\Bench Test.exe
 C:\Users\wbenjemaa\Desktop\Bench Test\Bench Test\obj\Debug\Bench Test.pdb
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench Test.csprojAssemblyReference.cache
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench_Test.Form1.resources
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench_Test.Form_splash.resources
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench_Test.Properties.Resources.resources
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench Test.csproj.GenerateResource.cache
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench Test.csproj.CoreCompileInputs.cache
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench Test.exe
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\obj\Debug\Bench Test.pdb
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\bin\Debug\Bench Test.exe.config
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\bin\Debug\Bench Test.exe
+C:\Users\wbenjemaa\Desktop\git\hmi_test_bench\Test_Bench_HMI\Test_Bench_HMI\Bench Test\Bench Test\bin\Debug\Bench Test.pdb

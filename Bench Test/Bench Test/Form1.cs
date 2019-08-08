@@ -22,6 +22,7 @@ namespace Bench_Test
             trd.Start();
             Thread.Sleep(8000); // Change loading time / 5000 = 5 sec
             InitializeComponent();
+            getAvailableports();
             trd.Abort();
             
             // Add items to the list class combobox
@@ -47,6 +48,41 @@ namespace Bench_Test
             // Change date inside the input date
             DateTime datetime = DateTime.Now;
             input_date.Text = datetime.ToString();
+        }
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.Text == "" || comboBox2.Text == "")
+                {
+                    textBox2.Text = "Please select port settings";
+                }
+                else
+                {
+                    serialPort1.PortName = comboBox1.Text;
+                    serialPort1.BaudRate = Convert.ToInt32(comboBox2.Text);
+                    serialPort1.Open();
+                    progressBar1.Value = 100;
+                    // button1.Enabled = true;
+                    button2.Enabled = true;
+                    textBox1.Enabled = true;
+                    button1.Enabled = false;
+                    //button4.Enabled = true;
+
+
+
+                }
+
+            }
+            catch (UnauthorizedAccessException)
+            {
+                textBox2.Text = "Unothorized access exeption";
+            }
+        }
+        void getAvailableports()
+        {
+            String[] ports = SerialPort.GetPortNames();
+            comboBox1.Items.AddRange(ports);
         }
         private void formRun()
         {
@@ -111,7 +147,7 @@ namespace Bench_Test
         //in case someone try to insert a fake class
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if( list_Baud.Text != "1" && list_Baud.Text != "2" && list_Baud.Text != "3")
+            /*if( list_Baud.Text != "1" && list_Baud.Text != "2" && list_Baud.Text != "3")
             {
                 serrage1.BackColor = System.Drawing.Color.DarkGray;
                 serrage2.BackColor = System.Drawing.Color.DarkGray;
@@ -121,7 +157,7 @@ namespace Bench_Test
                 serrage6.BackColor = System.Drawing.Color.DarkGray;
                 serrage7.BackColor = System.Drawing.Color.DarkGray;
                 serrage8.BackColor = System.Drawing.Color.DarkGray;
-            }
+            }*/
         }
 
         private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -604,12 +640,12 @@ namespace Bench_Test
 
         private void Reset_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Tests_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
+            /*Random random = new Random();
             var rnd = random.Next(1, 60);
             serrage1.Text = rnd+"";
             rnd = random.Next(1, 60);
@@ -625,7 +661,9 @@ namespace Bench_Test
             rnd = random.Next(1, 60);
             serrage7.Text = rnd + "";
             rnd = random.Next(1, 60);
-            serrage8.Text = rnd + "";
+            serrage8.Text = rnd + "";*/
+            
+
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
@@ -634,6 +672,43 @@ namespace Bench_Test
         }
 
         private void TextBox7_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProgressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProgressBar1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox2.Text = serialPort1.ReadLine();
+            }
+            catch (TimeoutException)
+            {
+                textBox2.Text = "Timeout Exeption";
+            }
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
